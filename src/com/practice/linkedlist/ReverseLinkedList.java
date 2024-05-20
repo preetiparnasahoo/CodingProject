@@ -1,22 +1,23 @@
 package com.practice.linkedlist;
+import com.practice.linkedlist.LinkedList.Node;
 
 public class ReverseLinkedList {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Node head = Node.createLinkedList(); 
+		LinkedList list = LinkedList.createLinkedList(); 
 		
-		head = Reverse(head);
+		Reverse(list);
 		
-		Node.printLinkedList(head);
+		LinkedList.printLinkedList(list);
 
 	}
 
 
-	public static Node Reverse(Node head) {
+	public static void Reverse(LinkedList list) {
 		// TODO Auto-generated method stub
-		Node curr = head;
+		Node curr = list.head;
 		Node prev = null;
 		Node fwd = null;
 		
@@ -27,7 +28,7 @@ public class ReverseLinkedList {
 			curr = fwd;
 		}
 		
-		return prev;
+		list.head = prev;
 	}
 
 }
