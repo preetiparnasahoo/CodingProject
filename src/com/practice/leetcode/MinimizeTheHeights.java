@@ -1,11 +1,11 @@
 package com.practice.leetcode;
 
-public class ClimbStairs {
+/**
+ */
+public class MinimizeTheHeights {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		int step = solution()
 
 	}
 
