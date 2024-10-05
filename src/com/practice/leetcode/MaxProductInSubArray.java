@@ -25,12 +25,33 @@ public class MaxProductInSubArray {
 		int[] arr = {6, -3, -10, 0, 2}; 
 
 		int maxProduct = findMaxProduct(arr);
+		System.out.println(maxProduct);
 
 	}
 
 	private static int findMaxProduct(int[] arr) {
 		// TODO Auto-generated method stub
-		return 0;
+		
+		
+		int maxSoFar = arr[0];
+		int maxHere = arr[0];
+		int minHere = arr[0];
+		
+		int len = arr.length;
+		
+		for(int i = 1 ; i < len ; i++) {
+			int curr = arr[i];
+			if ( curr < 0 ) {
+				int temp = maxHere;
+				maxHere = minHere;
+				minHere = temp;
+			}
+			maxHere = Math.max(curr, maxHere * curr);
+			minHere = Math.min(curr, minHere * curr);
+			
+			maxSoFar = Math.max(maxHere, maxSoFar);
+		}
+		return maxSoFar;
 	}
 
 }
