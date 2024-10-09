@@ -4,11 +4,7 @@
  */
 package com.practice.leetcode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Given two strings s and p, return an array of all the start indices of p's
@@ -44,6 +40,11 @@ public class FindAllAnagramsInAString_438 {
 		List<Integer> res = findAnagrams(s, p);
 		System.out.println(res);
 
+	}
+
+	public static List<Integer> findAnagrams(String s, String p) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
