@@ -39,38 +39,35 @@ public class LongestSubstringWithAtMostKDistinctCharacters {
 
 	private static int findMaxLengthSubstring(String s, int k) {
 		// TODO Auto-generated method stub
-		
-		if(s == null | s.length() == 0 | k == 0) {
-		return 0;
+
+		if (s == null | s.length() == 0 | k == 0) {
+			return 0;
 		}
-		
+
 		int maxLength = 0;
 		int start = 0;
-		
-		
-		Map<Character,Integer> map = new HashMap<>();
-		
-		for (int end = 0 ; end < s.length() ; end++) {
+
+		Map<Character, Integer> map = new HashMap<>();
+
+		for (int end = 0; end < s.length(); end++) {
 			char rightChar = s.charAt(end);
 			map.put(rightChar, map.getOrDefault(rightChar, 0) + 1);
-			
-			//Shrink the window until there are only k distinct elements
-			
-			while(map.size() > k) {
+
+			// Shrink the window until there are only k distinct elements
+
+			while (map.size() > k) {
 				char leftChar = s.charAt(start);
 				map.put(leftChar, map.get(leftChar) - 1);
-				if(map.get(leftChar) == 0) {
+				if (map.get(leftChar) == 0) {
 					map.remove(leftChar);
 				}
 				start++;
-				
+
 			}
-			
+
 			maxLength = Math.max(maxLength, end - start + 1);
 		}
-		
-		
-		
+
 		return maxLength;
 	}
 
